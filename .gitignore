@@ -1,0 +1,8 @@
+.idea
+.terraform
+terraform_provider.tf
+*.tfstate*
+*.tfvars
+backend.tf
+.DS_Store
+.vscode/settings.json
