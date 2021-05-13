@@ -20,9 +20,17 @@ variable "engine_version" {
 
 variable "parameter_group_name" {
   type = string
-  default = "default.redis3.2"
+  default = "default.redis3.2.cluster.on"
+}
+variable "multi_az_enabled" {
+  type = bool
+  default = true
 }
 
+variable "maintenance_window" {
+  type = string
+  default =  "sun:05:00-sun:09:00"
+}
 # INPUT VARIABLES
 variable "vpc_id" {
   type = string
@@ -35,4 +43,9 @@ variable "subnet_ids" {
 variable "elasticache_replicas_count" {
   type = number
   description = "Quantity of replicas desired"
+}
+
+variable "elasticache_shard_count" {
+  type = number
+  description = "Quantity of shards desired"
 }
